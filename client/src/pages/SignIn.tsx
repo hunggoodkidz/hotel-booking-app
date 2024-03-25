@@ -19,11 +19,8 @@ const SignIn = () => {
         onSuccess: async () => {
             showToast({message: "Sign In Successful! ", type: "SUCCESS"})
             navigate("/");
-            // 1. show the toast
-            // 2. navigate to the home page
         },
         onError: (error: Error) =>{
-            // show the toast
             showToast({ message: error.message, type: "ERROR"})
 
         }
