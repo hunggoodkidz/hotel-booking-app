@@ -2,8 +2,7 @@ export type UserType = {
     _id: string;
     email: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    fullName: string;
   };
   
   export type HotelType = {
@@ -27,8 +26,7 @@ export type UserType = {
   export type BookingType = {
     _id: string;
     userId: string;
-    firstName: string;
-    lastName: string;
+    fullName: string;
     email: string;
     adultCount: number;
     childCount: number;

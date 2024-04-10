@@ -9,6 +9,8 @@ import path from "path";
 import {v2 as cloudinary} from 'cloudinary';
 import myHotelRoutes from './routes/my-hotels';
 import {router as hotelRoutes} from './routes/hotels';
+import bookingRoutes from "./routes/my-bookings";
+
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -39,10 +41,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes)
 app.use("/api/my-hotels",myHotelRoutes)
 app.use("/api/hotels", hotelRoutes);
+app.use("/api/my-bookings", bookingRoutes);
 
-// app.get("*", (req: Request, res: Response) =>{
-//     res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
-// })
+app.get("*", (req: Request, res: Response) =>{
+    res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
+})
 
 app.listen(7000 , () => {
     console.log("server running on localhost:7000");
